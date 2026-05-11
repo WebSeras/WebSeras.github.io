@@ -65,4 +65,36 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Check for saved theme preference or use OS preference
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if(themeToggle) themeToggle.textContent = '☀️';
+    } else if (currentTheme == 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        if(themeToggle) themeToggle.textContent = '🌙';
+    } else if (prefersDarkScheme.matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if(themeToggle) themeToggle.textContent = '☀️';
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        });
+    }
 });

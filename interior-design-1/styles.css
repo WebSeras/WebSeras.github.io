@@ -4,6 +4,30 @@
     --bg-light: #F9F8F6;
     --text-main: #333333;
     --text-muted: #666666;
+    --card-bg: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --nav-bg-hover: rgba(255, 255, 255, 0.98);
+    --input-bg: #fafafa;
+    --input-border: #e0e0e0;
+    --footer-bg: #2C2A26;
+    --footer-text: #ffffff;
+    --service-border: rgba(196, 164, 124, 0.4);
+}
+
+[data-theme="dark"] {
+    --primary: #EAE6DF;
+    --accent: #D4B48C;
+    --bg-light: #121212;
+    --text-main: #E0E0E0;
+    --text-muted: #A0A0A0;
+    --card-bg: #1E1E1E;
+    --nav-bg: rgba(30, 30, 30, 0.85);
+    --nav-bg-hover: rgba(30, 30, 30, 0.98);
+    --input-bg: #2A2A2A;
+    --input-border: #444444;
+    --footer-bg: #0A0A0A;
+    --footer-text: #E0E0E0;
+    --service-border: rgba(212, 180, 140, 0.3);
 }
 
 * {
@@ -73,7 +97,7 @@ a {
 }
 
 .nav-container {
-    background: rgba(255, 255, 255, 0.85);
+    background: var(--nav-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 40px;
@@ -88,8 +112,8 @@ a {
 }
 
 .nav-container:hover, .nav-container.expanded {
-    max-width: 650px;
-    background: rgba(255, 255, 255, 0.98);
+    max-width: 750px;
+    background: var(--nav-bg-hover);
 }
 
 .logo {
@@ -129,6 +153,19 @@ a {
 
 .nav-links a:hover {
     color: var(--accent);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 3px 5px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
 }
 
 /* HERO */
@@ -215,9 +252,10 @@ a {
 }
 
 .service-card {
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 4px;
     overflow: hidden;
+    border: 1px solid var(--service-border);
     box-shadow: 0 10px 40px rgba(0,0,0,0.03);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     display: flex;
@@ -256,7 +294,7 @@ a {
     flex-direction: column;
     justify-content: center;
     background: var(--primary);
-    color: #fff;
+    color: var(--bg-light);
 }
 
 .service-info.no-img h3 {
@@ -265,21 +303,35 @@ a {
 
 /* REVIEWS */
 .reviews {
-    background: #fff;
+    background: var(--card-bg);
 }
 
 .reviews-slider {
     display: flex;
     gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+}
+.reviews-slider::-webkit-scrollbar {
+    height: 8px;
+}
+.reviews-slider::-webkit-scrollbar-track {
+    background: transparent;
+}
+.reviews-slider::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 10px;
 }
 
 .review-card {
     background: var(--bg-light);
     padding: 40px;
     border-radius: 4px;
-    width: calc(33.333% - 20px);
+    flex: 0 0 calc(50% - 15px);
+    scroll-snap-align: start;
     min-width: 300px;
     text-align: center;
     position: relative;
@@ -323,7 +375,7 @@ a {
 .contact-wrapper {
     max-width: 600px;
     margin: 0 auto;
-    background: #fff;
+    background: var(--card-bg);
     padding: 50px;
     border-radius: 4px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.03);
@@ -338,8 +390,9 @@ a {
 .input-group input, .input-group textarea {
     width: 100%;
     padding: 15px 20px;
-    border: 1px solid #e0e0e0;
-    background: #fafafa;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text-main);
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     border-radius: 2px;
@@ -349,13 +402,13 @@ a {
 
 .input-group input:focus, .input-group textarea:focus {
     border-color: var(--accent);
-    background: #fff;
+    background: var(--card-bg);
 }
 
 .submit-btn {
     padding: 15px;
     background: var(--primary);
-    color: #fff;
+    color: var(--bg-light);
     border: none;
     font-size: 1rem;
     text-transform: uppercase;
@@ -373,8 +426,8 @@ a {
 
 /* FOOTER */
 .footer {
-    background: var(--primary);
-    color: #fff;
+    background: var(--footer-bg);
+    color: var(--footer-text);
     padding: 80px 5% 20px;
 }
 
@@ -387,7 +440,7 @@ a {
 }
 
 .footer-brand h3 {
-    color: #fff;
+    color: var(--footer-text);
     font-size: 2.2rem;
     margin-bottom: 15px;
 }
@@ -437,7 +490,7 @@ a {
 /* RESPONSIVE */
 @media (max-width: 992px) {
     .review-card {
-        width: calc(50% - 15px);
+        flex: 0 0 calc(50% - 15px);
     }
 }
 
@@ -469,7 +522,7 @@ a {
         font-size: 0.8rem;
     }
     .review-card {
-        width: 100%;
+        flex: 0 0 100%;
     }
     .contact-wrapper {
         padding: 30px 20px;
