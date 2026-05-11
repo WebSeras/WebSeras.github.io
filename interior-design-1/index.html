@@ -13,13 +13,23 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="logo">int-des</a>
+            <a href="#hero" class="logo" aria-label="Home">
+                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 36" width="130" height="36">
+                    <path d="M 5 30 L 5 10 L 15 10 L 15 20 L 25 20 L 25 30" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+                    <text x="35" y="26" font-family="'Playfair Display', serif" font-size="24" font-weight="600" fill="currentColor" letter-spacing="0.5">int-des</text>
+                </svg>
+            </a>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -72,24 +82,29 @@
             <div class="reviews-slider">
                 <div class="review-card">
                     <p class="review-text">"int-des transformed our house into a home. Their attention to detail is unmatched and the final result exceeded our wildest expectations."</p>
-                    <p class="review-author">- Sarah Jenkins</p>
+                    <p class="review-author">- Ananya Sharma</p>
                 </div>
                 <div class="review-card">
                     <p class="review-text">"Our office space has never looked better. The team was professional, visionary, and delivered the project perfectly on schedule."</p>
-                    <p class="review-author">- Mark Thompson</p>
+                    <p class="review-author">- Rajesh Kumar</p>
                 </div>
                 <div class="review-card">
                     <p class="review-text">"A truly premium experience from start to finish. I highly recommend their services to anyone looking for sophisticated design."</p>
-                    <p class="review-author">- Emily Chen</p>
+                    <p class="review-author">- Priya Patel</p>
                 </div>
                 <div class="review-card">
                     <p class="review-text">"The bespoke furniture selection completely elevated our living room. It's both beautiful and functional."</p>
-                    <p class="review-author">- David Ramirez</p>
+                    <p class="review-author">- Rohan Desai</p>
                 </div>
                 <div class="review-card">
                     <p class="review-text">"Incredible eye for color and texture. They understood my vision perfectly and executed it flawlessly."</p>
-                    <p class="review-author">- Chloe Bennett</p>
+                    <p class="review-author">- Kavita Joshi</p>
                 </div>
+            </div>
+            <div class="carousel-indicators">
+                <div class="indicator active"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
             </div>
         </div>
     </section>
@@ -119,15 +134,18 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <h3>int-des</h3>
+                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 36" width="130" height="36" style="margin-bottom: 15px; color: var(--footer-text);">
+                    <path d="M 5 30 L 5 10 L 15 10 L 15 20 L 25 20 L 25 30" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+                    <text x="35" y="26" font-family="'Playfair Display', serif" font-size="24" font-weight="600" fill="currentColor" letter-spacing="0.5">int-des</text>
+                </svg>
                 <p>Curating luxury spaces globally.</p>
             </div>
             <div class="footer-contact">
                 <h4>Contact Info</h4>
-                <p>123 Design Avenue, Suite 400</p>
-                <p>New York, NY 10001</p>
-                <p>Phone: +1 (555) 123-4567</p>
-                <p>Email: hello@int-des.com</p>
+                <p>Koregaon Park, Lane 5</p>
+                <p>Pune, Maharashtra 411001, India</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Email: namaste@int-des.in</p>
             </div>
         </div>
         <div class="footer-bottom">
