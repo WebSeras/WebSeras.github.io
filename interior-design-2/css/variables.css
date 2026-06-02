@@ -1,0 +1,42 @@
+:root {
+  /* Fonts */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Accent Colors */
+  --color-accent: #2a5934; /* Forest Green */
+  --color-accent-hover: #1e4125;
+  
+  /* Status Colors */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1EBE5D;
+
+  /* Global Settings */
+  --transition-speed: 0.3s;
+  --border-radius: 8px;
+  --header-height: 80px;
+
+  /* Light Theme (Default) */
+  --color-bg: #f4f1eb; /* Toned-down alabaster */
+  --color-bg-alt: #eae6df;
+  --color-text: #2c2c2c;
+  --color-text-light: #5a5a5a;
+  --color-border: #d8d4cd;
+  --color-nav-bg: rgba(244, 241, 235, 0.95);
+  --color-card-bg: #fdfcf9;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-theme {
+  /* Dark Theme */
+  --color-bg: #121212;
+  --color-bg-alt: #1a1a1a;
+  --color-text: #f0f0f0;
+  --color-text-light: #aaaaaa;
+  --color-border: #333333;
+  --color-nav-bg: rgba(18, 18, 18, 0.95);
+  --color-card-bg: #1e1e1e;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
