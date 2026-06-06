@@ -85,63 +85,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         pricingGrid.insertAdjacentHTML('beforeend', html);
     });
 
-    // 6. Fetch and Render Instagram Posts (Prioritize Images)
-    try {
-        const response = await fetch('data/raw/posts.json');
-        if (response.ok) {
-            const posts = await response.json();
-            
-            // Filter images vs videos
-            const imagePosts = posts.filter(p => !p.is_video && p.local_media_path);
-            const videoPosts = posts.filter(p => p.is_video && p.local_media_path);
-            
-            // Hero Media: Use the first high-quality image, fallback to video
-            const heroMediaContainer = document.getElementById('hero-media-container');
-            const heroPost = imagePosts[0] || videoPosts[0] || posts[0];
-            
-            if (heroPost && heroPost.local_media_path) {
-                if (heroPost.is_video) {
-                    heroMediaContainer.innerHTML = `<video src="${heroPost.local_media_path}" autoplay muted loop playsinline></video>`;
-                } else {
-                    heroMediaContainer.innerHTML = `<img src="${heroPost.local_media_path}" alt="Interior Design">`;
-                }
-            }
 
-            // Featured Project Media
-            const featuredMediaContainer = document.getElementById('featured-media-container');
-            const featuredPost = imagePosts[1] || imagePosts[0];
-            if (featuredPost) {
-                featuredMediaContainer.innerHTML = `<img src="${featuredPost.local_media_path}" alt="Featured Project">`;
-            }
-
-            // Process Section Media
-            const processMediaContainer = document.getElementById('process-media-container');
-            const processPost = imagePosts[2] || imagePosts[0];
-            if (processPost) {
-                processMediaContainer.innerHTML = `<img src="${processPost.local_media_path}" alt="Process">`;
-            }
-
-            // Populate Gallery (max 3 items for layout symmetry like the reference)
-            const galleryGrid = document.getElementById('gallery-grid');
-            // We want mostly images!
-            const galleryPosts = imagePosts.slice(3, 6);
-            
-            galleryPosts.forEach((post) => {
-                const html = `
-                    <div class="gallery-item reveal" onclick="window.open('${post.url}', '_blank')">
-                        <img src="${post.local_media_path}" alt="Interior Project" loading="lazy">
-                        <div class="gallery-caption">
-                            <span>Instagram Project</span>
-                            <span>❤️ ${post.likes}</span>
-                        </div>
-                    </div>
-                `;
-                galleryGrid.insertAdjacentHTML('beforeend', html);
-            });
-        }
-    } catch (e) {
-        console.error("Could not load gallery data:", e);
-    }
 
     // 7. Form Submission Override
     const contactForm = document.getElementById('contact-form');
