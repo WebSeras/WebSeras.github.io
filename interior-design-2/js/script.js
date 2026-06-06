@@ -87,21 +87,85 @@ document.addEventListener('DOMContentLoaded', async () => {
         servicesGrid.insertAdjacentHTML('beforeend', html);
     }
 
-    // 5. Populate Pricing (What We're Known For)
-    const pricingGrid = document.getElementById('pricing-grid');
-    document.getElementById('pricing-note').textContent = content.pricing.note;
+    // 5. Populate Pricing (Investment)
+    const pricingRows = document.getElementById('pricing-rows');
     content.pricing.packages.forEach((pkg, index) => {
         const html = `
-            <div class="service-row reveal">
-                <div class="service-name">${pkg.name}</div>
-                <div class="service-details">${pkg.features.join(' / ')}</div>
-                <div class="service-price">${pkg.price}</div>
-            </div>
+            <tr class="reveal">
+                <td class="col-name">${pkg.name}</td>
+                <td class="col-price">${pkg.price}</td>
+                <td class="col-features">${pkg.features.join(' / ')}</td>
+            </tr>
         `;
-        pricingGrid.insertAdjacentHTML('beforeend', html);
+        pricingRows.insertAdjacentHTML('beforeend', html);
     });
 
+    // 6. Carousel Logic
+    const projects = content.projects || [];
+    let currentSlide = 0;
+    
+    const bgImage = document.getElementById('carousel-bg-image');
+    const projectYear = document.getElementById('carousel-project-year');
+    const projectTitle = document.getElementById('carousel-project-title');
+    const projectDesc = document.getElementById('carousel-project-desc');
+    const projectImg = document.getElementById('carousel-project-img');
+    const slideNum = document.getElementById('carousel-slide-num');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const carouselCard = document.getElementById('carousel-card');
 
+    function updateCarousel() {
+        if (!projects.length) return;
+        const project = projects[currentSlide];
+        
+        // Remove active class to trigger fade out
+        carouselCard.classList.remove('active');
+        
+        setTimeout(() => {
+            // Update content
+            bgImage.style.backgroundImage = `url('${project.image}')`;
+            projectYear.textContent = project.year;
+            projectTitle.textContent = project.title;
+            projectDesc.textContent = project.description;
+            projectImg.src = project.image;
+            projectImg.alt = project.title;
+            slideNum.textContent = `${currentSlide + 1} / ${projects.length}`;
+            
+            // Add active class back to fade in
+            carouselCard.classList.add('active');
+        }, 300);
+    }
+
+    if (prevBtn && nextBtn && projects.length) {
+        // Initialize
+        updateCarousel();
+        
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + projects.length) % projects.length;
+            updateCarousel();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % projects.length;
+            updateCarousel();
+        });
+    }
+
+    // 6.5. Populate Reviews
+    const reviewsGrid = document.getElementById('reviews-grid');
+    if (reviewsGrid && content.reviews) {
+        content.reviews.forEach(review => {
+            const stars = '▲'.repeat(review.rating) + '△'.repeat(5 - review.rating);
+            const html = `
+                <div class="review-item reveal">
+                    <div class="review-stars">${stars}</div>
+                    <p class="review-text">"${review.text}"</p>
+                    <div class="review-author">— ${review.author}, ${review.location}</div>
+                </div>
+            `;
+            reviewsGrid.insertAdjacentHTML('beforeend', html);
+        });
+    }
 
     // 7. Form Submission Override
     const contactForm = document.getElementById('contact-form');

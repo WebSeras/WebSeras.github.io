@@ -7,8 +7,8 @@ export const content = {
     services: [
         {
             id: "space-saving",
-            title: "Space-Saving Furniture",
-            description: "Maximize your room's potential.",
+            title: "Space-Efficient Furniture",
+            description: "Maximizing utility in minimum area.",
             icon: "public/generated/space_saving.svg"
         },
         {
@@ -56,6 +56,52 @@ export const content = {
         {
             question: "Where are you located?",
             answer: "We are based in Pune, and we handle projects across the city."
+        }
+    ],
+    projects: [
+        {
+            title: "COMPACT MODULAR KITCHEN",
+            description: "Custom-built modular kitchen that optimizes storage space without compromising on design style.",
+            image: "public/photos/DVQPZ93jC7C.jpg",
+            year: "2023"
+        },
+        {
+            title: "THE MINIMALIST COZY BEDROOM",
+            description: "A functional, warm layout tailored to facilitate natural light and everyday ease.",
+            image: "public/photos/DVQPZ93jIrJ.jpg",
+            year: "2022"
+        },
+        {
+            title: "MODERN ARTISTIC LIVING ROOM",
+            description: "An integration of a modern design with custom living room furniture and artistic decorative backdrops.",
+            image: "public/photos/DVQPZ93jK2F.jpg",
+            year: "2023"
+        },
+        {
+            title: "ELEGANCE OF A LIVING ROOM",
+            description: "A cohesive integration of custom living room furniture with clean, minimalist backdrops.",
+            image: "public/photos/DSH7WTXDIb_.jpg",
+            year: "2021"
+        }
+    ],
+    reviews: [
+        {
+            rating: 5,
+            text: "Squares n Triangles completely transformed our compact apartment. The space-saving furniture is exceptionally designed and works like magic.",
+            author: "Amit K.",
+            location: "Pune"
+        },
+        {
+            rating: 5,
+            text: "Our modular kitchen is not only beautiful but incredibly efficient. Every corner of the space was optimized for Indian cooking.",
+            author: "Priya S.",
+            location: "Pune"
+        },
+        {
+            rating: 5,
+            text: "Professional execution from start to finish. They delivered the project on time and the quality of details exceeded our expectations.",
+            author: "Rohan M.",
+            location: "Pune"
         }
     ]
 };

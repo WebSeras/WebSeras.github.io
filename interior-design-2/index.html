@@ -27,7 +27,8 @@
         <a href="#" class="logo" id="brand-logo">Squares n Triangles</a>
         <div class="nav-links">
           <a href="#philosophy">Philosophy</a>
-          <a href="#portfolio">Work</a>
+          <a href="#featured-carousel">Portfolio</a>
+          <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
           <button
             id="theme-toggle"
@@ -75,7 +76,7 @@
           <p id="hero-subheading">
             Premium interior design tailored for modern living in Pune.
           </p>
-          <a href="#contact" class="link-arrow" id="hero-btn">Enquire Now</a>
+          <a href="#contact" class="link-arrow" id="hero-btn">Enquire Now ↪</a>
         </div>
       </section>
 
@@ -93,22 +94,78 @@
         </div>
       </section>
 
-      <!-- Featured Section -->
-      <section class="featured-section reveal">
-        <div class="featured-bg" id="featured-media-container">
-          <img src="public/photos/DVQPZ93jC7C.jpg" alt="Featured Project" />
+      <!-- Featured Section (Carousel) -->
+      <section class="featured-section reveal" id="featured-carousel">
+        <div class="carousel-bg-container">
+          <div class="carousel-bg" id="carousel-bg-image"></div>
+          <div class="carousel-overlay"></div>
         </div>
         <div class="container featured-content-wrapper">
-          <div class="featured-card">
-            <h3 class="small-caps">LATEST PROJECT</h3>
-            <h2>MODERN RESIDENTIAL ELEGANCE</h2>
-            <p>
-              A space designed to balance function and form, maximizing utility
-              without sacrificing aesthetics.
-            </p>
-            <a href="#portfolio" class="link-arrow"
-              >Explore Project <span>↗</span></a
+          <div class="carousel-card" id="carousel-card">
+            <div class="carousel-card-left">
+              <div class="carousel-card-meta">
+                <span class="carousel-card-year" id="carousel-project-year"
+                  >20XX</span
+                >
+              </div>
+              <h2 id="carousel-project-title">COMPACT MODULAR KITCHEN</h2>
+              <p id="carousel-project-desc">
+                Custom-built modular kitchen that optimizes storage space
+                without compromising on design style.
+              </p>
+            </div>
+            <div class="carousel-card-right">
+              <img
+                id="carousel-project-img"
+                src="public/photos/DVQPZ93jC7C.jpg"
+                alt="Featured Project"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom left controls -->
+        <div class="carousel-controls">
+          <div class="carousel-fraction" id="carousel-slide-num">1 / 4</div>
+          <div class="carousel-nav">
+            <button
+              class="carousel-btn prev-btn"
+              id="carousel-prev"
+              aria-label="Previous Project"
             >
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                stroke="currentColor"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+            <button
+              class="carousel-btn next-btn"
+              id="carousel-next"
+              aria-label="Next Project"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                stroke="currentColor"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -121,49 +178,17 @@
         </div>
       </div>
 
-      <!-- Portfolio Gallery -->
-      <section class="section container" id="portfolio">
-        <div class="portfolio-header reveal">
-          <h3>FEATURED SPACES</h3>
-          <p class="portfolio-desc">
-            Designers, craftsmen, and collaborators working together to shape
-            interiors that feel intentional, warm, and enduring.
+      <!-- Reviews Section -->
+      <section class="section container" id="reviews">
+        <div class="section-header reveal">
+          <h2>CLIENT REVIEWS</h2>
+          <p class="section-desc">
+            What our clients in Pune say about our spatial designs and
+            execution.
           </p>
         </div>
-        <div class="gallery-grid" id="gallery-grid">
-          <div class="gallery-item reveal">
-            <img
-              src="public/photos/DVQPZ93jIrJ.jpg"
-              alt="Interior Project"
-              loading="lazy"
-            />
-            <div class="gallery-caption">
-              <span>Instagram Project</span>
-              <span>❤️ 20</span>
-            </div>
-          </div>
-          <div class="gallery-item reveal">
-            <img
-              src="public/photos/DVQPZ93jK2F.jpg"
-              alt="Interior Project"
-              loading="lazy"
-            />
-            <div class="gallery-caption">
-              <span>Instagram Project</span>
-              <span>❤️ 20</span>
-            </div>
-          </div>
-          <div class="gallery-item reveal">
-            <img
-              src="public/photos/DSH7WTXDIb_.jpg"
-              alt="Interior Project"
-              loading="lazy"
-            />
-            <div class="gallery-caption">
-              <span>Instagram Project</span>
-              <span>❤️ 18</span>
-            </div>
-          </div>
+        <div class="reviews-grid" id="reviews-grid">
+          <!-- Reviews injected via JS -->
         </div>
       </section>
 
@@ -186,20 +211,30 @@
         </div>
       </section>
 
-      <!-- What We're Known For (Pricing/Services) -->
+      <!-- Investment Section -->
       <section
-        class="section container known-for-section reveal"
+        class="section container investment-section reveal"
         id="services-list"
       >
-        <div class="known-for-header">
-          <h3>INVESTMENT</h3>
-          <p id="pricing-note">
-            We specialize in turning limited spaces into functional homes.
+        <div class="section-header reveal">
+          <h2>INVESTMENT</h2>
+          <p class="section-desc">
+            Please note: These are estimated starting prices. We provide custom
+            quotes based on your exact requirements.
           </p>
         </div>
-        <div class="known-for-list" id="pricing-grid">
-          <!-- Pricing injected via JS -->
-        </div>
+        <table class="investment-table">
+          <thead>
+            <tr>
+              <th class="col-name">Service</th>
+              <th class="col-price">Starting Price</th>
+              <th class="col-features">Inclusions</th>
+            </tr>
+          </thead>
+          <tbody id="pricing-rows">
+            <!-- Table rows injected via JS -->
+          </tbody>
+        </table>
       </section>
 
       <!-- Contact Section -->
@@ -211,7 +246,7 @@
         <form class="contact-form" id="contact-form">
           <input type="text" placeholder="Name" required />
           <input type="tel" placeholder="Phone" required />
-          <button type="submit" class="btn btn-primary">Start Project</button>
+          <button type="submit" class="btn btn-primary">WHATSAPP ↪</button>
         </form>
       </section>
     </main>

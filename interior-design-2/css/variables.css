@@ -21,6 +21,7 @@
 :root[data-theme="light"], :root {
     /* 60% Background */
     --color-bg: #F2F0ED; 
+    --color-nav-bg: rgba(255, 255, 255, 0.45);
     
     /* 30% Secondary (Text/Surface) */
     --color-text: #2C2C2B;
@@ -36,6 +37,7 @@
 :root[data-theme="dark"] {
     /* 60% Background */
     --color-bg: #1C1C1B; 
+    --color-nav-bg: rgba(0, 0, 0, 0.45);
     
     /* 30% Secondary (Text/Surface) */
     --color-text: #EAE7E1;
