@@ -58,18 +58,34 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('hero-subheading').textContent = content.hero.subheading;
     
     const servicesGrid = document.getElementById('services-grid');
-    content.services.forEach((service, index) => {
+    for (let index = 0; index < content.services.length; index++) {
+        const service = content.services[index];
         const num = String(index + 1).padStart(2, '0');
+        
+        let iconHtml = '';
+        if (service.icon.endsWith('.svg')) {
+            try {
+                const response = await fetch(service.icon);
+                const svgText = await response.text();
+                // Add a wrapper or style to the SVG directly if needed, but inheriting is fine
+                iconHtml = svgText;
+            } catch (e) {
+                iconHtml = `<img src="${service.icon}" alt="${service.title}" style="width: 60%; height: auto; opacity: 0.8;">`;
+            }
+        } else {
+            iconHtml = `<img src="${service.icon}" alt="${service.title}" style="width: 60%; height: auto; opacity: 0.8;">`;
+        }
+
         const html = `
             <div class="philosophy-item reveal">
                 <span class="philosophy-number">${num}</span>
-                <div class="philosophy-img"><img src="${service.icon}" alt="${service.title}" style="width: 60%; height: auto; opacity: 0.8;"></div>
+                <div class="philosophy-img">${iconHtml}</div>
                 <h3>${service.title}</h3>
                 <p>${service.description}</p>
             </div>
         `;
         servicesGrid.insertAdjacentHTML('beforeend', html);
-    });
+    }
 
     // 5. Populate Pricing (What We're Known For)
     const pricingGrid = document.getElementById('pricing-grid');
@@ -121,7 +137,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
     };
-
     window.addEventListener('scroll', handleScroll);
     // Trigger once on load
     setTimeout(handleScroll, 100);

@@ -8,20 +8,20 @@ export const content = {
         {
             id: "space-saving",
             title: "Space-Saving Furniture",
-            description: "Smart Murphy beds, foldable furniture, and compact living solutions that maximize your room's potential.",
-            icon: "public/generated/glyph_space_saving_1780750043109.png"
+            description: "Maximize your room's potential.",
+            icon: "public/generated/space_saving.svg"
         },
         {
             id: "full-interiors",
             title: "Full Home Interiors",
-            description: "End-to-end interior design and execution for a cohesive, elegant, and highly functional home.",
-            icon: "public/generated/glyph_living_room_1780750054384.png"
+            description: "For a elegant and highly functional home.",
+            icon: "public/generated/living_room.svg"
         },
         {
             id: "modular-kitchens",
             title: "Modular Kitchens",
-            description: "Aesthetically pleasing and highly efficient kitchen designs optimized for Indian cooking.",
-            icon: "public/generated/glyph_kitchen_1780750064942.png"
+            description: "For an elegant and highly functional kitchen.",
+            icon: "public/generated/kitchen.svg"
         }
     ],
     pricing: {
