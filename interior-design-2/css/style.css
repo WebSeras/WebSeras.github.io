@@ -5,8 +5,13 @@
     box-sizing: border-box;
 }
 
+*::selection {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
 html {
-    scroll-behavior: initial; /* Let Lenis handle it */
+    scroll-behavior: initial;
 }
 
 body {
