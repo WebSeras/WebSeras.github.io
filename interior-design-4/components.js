@@ -18,12 +18,15 @@ class Navbar extends HTMLElement {
         const menuToggle = this.querySelector('.menu-toggle');
         const navLinks = this.querySelector('.nav-links');
         const header = this.querySelector('.site-header');
-        const currentPage = window.location.pathname.split('/').pop() || 'index';
+        const path = window.location.pathname;
+        let currentPage = path.split('/').pop();
+        if (currentPage === '') currentPage = '/';
 
         this.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active');
-            const linkPage = link.getAttribute('href');
-            if (linkPage === currentPage) {
+            let linkPage = link.getAttribute('href');
+
+            if (linkPage === currentPage || (path === '/' && linkPage === '/')) {
                 link.classList.add('active');
             }
         });
