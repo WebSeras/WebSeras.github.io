@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Elan | Where Rooms Remember</title>
+    <title>The Casa Elan</title>
     <meta name="description" content="Casa Elan crafts interiors that carry the weight of time. Interiors of Quiet Distinction.">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js" defer></script>
+    <script src="components.js" defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
-    <header class="site-header">
-        <a href="index.html" class="logo">CASA ELAN</a>
-        <button class="menu-toggle" aria-label="Toggle Navigation">MENU</button>
-        <nav class="nav-links">
-            <a href="index.html" class="nav-link active">Home</a>
-            <a href="portfolio.html" class="nav-link">Portfolio</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </nav>
-    </header>
+    <c-navbar></c-navbar>
 
     <main>
         <!-- Hero Section -->
@@ -26,29 +25,30 @@
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <div class="hero-eyebrow font-utility uppercase hero-text-line">INTERIOR DESIGN</div>
-                <h1 class="hero-headline font-display italic text-hero hero-text-line delay-1">Where Rooms Remember</h1>
-                <p class="hero-subtext font-body hero-text-line delay-2">Casa Elan crafts interiors that carry the weight of time.</p>
-                <a href="portfolio.html" class="cta-button hero-text-line delay-3">Explore Our Work</a>
+                <h1 class="hero-headline font-display italic text-hero hero-text-line ">Elegant Interiors</h1>
+                <p class="hero-subtext font-body hero-text-line ">Reject the ordinary. Embrace the exceptional.</p>
+                <a href="portfolio.html" class="cta-button hero-text-line ">Explore Our Work</a>
+                <a href="#ethos" class="ghost hero-text-line ">View More</a>
             </div>
         </section>
 
         <!-- Ethos Section -->
-        <section class="section">
+        <section class="section ethos" id="ethos">
             <div class="container grid ethos-grid">
                 <div class="ethos-text reveal">
                     <div class="ethos-label font-utility uppercase text-xs">OUR PHILOSOPHY</div>
                     <h2 class="ethos-heading font-display">Beauty Born of Restraint</h2>
-                    <p class="ethos-body font-body">At Casa Elan, we believe that true elegance lies in what is left unsaid. Our spaces are characterized by a refined, timeless approach that favors architectural integrity and curated materials over fleeting trends. We design environments that feel collected over generations, honoring the dialogue between light, texture, and proportion.</p>
+                    <p class="ethos-body font-body">At Casa Elan, we believe that true elegance lies in what is left unsaid. Our spaces are characterized by a refined, timeless approach that favors architectural integrity and curated materials over fleeting trends. We design environments that feel collected over generations, honoring the dialogue between light, texture, and proportion.<br><br>Our approach is architectural at its core, stripping away the superfluous to reveal the essential character of a space. The result is an interior of quiet distinction.</p>
                     <hr class="hairline">
                 </div>
-                <div class="ethos-image reveal delay-1">
-                    <img src="https://placehold.co/800x600/4A443A/F0EBE1?text=Ethos" alt="Interior space reflecting our philosophy">
+                <div class="ethos-image reveal ">
+                    <img src="/assets/image_1.jpg" alt="Interior space reflecting our philosophy">
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section class="section services-section">
+        <section class="section services-section" id="services">
             <div class="container">
                 <div class="font-utility uppercase text-xs text-center reveal">WHAT WE DO</div>
                 <div class="grid services-grid">
@@ -57,12 +57,12 @@
                         <h3 class="service-title font-display text-h3">Residential Design</h3>
                         <p class="font-body text-secondary">Crafting private sanctuaries that balance grandeur with profound intimacy. Every detail is meticulously considered for the rhythms of daily life.</p>
                     </div>
-                    <div class="service-card reveal delay-1">
+                    <div class="service-card reveal ">
                         <div class="service-numeral font-display">II</div>
                         <h3 class="service-title font-display text-h3">Spatial Curation</h3>
                         <p class="font-body text-secondary">A holistic approach to environment, integrating bespoke furniture, textiles, and objects that engage in quiet conversation.</p>
                     </div>
-                    <div class="service-card reveal delay-2">
+                    <div class="service-card reveal ">
                         <div class="service-numeral font-display">III</div>
                         <h3 class="service-title font-display text-h3">Art Consultation</h3>
                         <p class="font-body text-secondary">Sourcing and placing significant works that elevate the architectural context and reflect the nuanced tastes of our clientele.</p>
@@ -71,30 +71,20 @@
             </div>
         </section>
 
-        <!-- Featured Project -->
+        <!-- Featured Project Carousel -->
         <section class="section featured-project">
             <div class="container reveal">
-                <img src="https://placehold.co/1600x600/4A443A/F0EBE1?text=The+Wentworth+Residence" alt="The Wentworth Residence living space">
-                <hr class="hairline" style="margin-bottom: 24px;">
-                <h3 class="font-display italic text-center text-h2">The Wentworth Residence</h3>
-                <hr class="hairline" style="margin-top: 24px;">
+                <div class="swiper custom-swiper">
+                        <div class="swiper-gradient-overlay"></div>
+                    <div class="swiper-wrapper" id="home-swiper-wrapper">
+                        <!-- Slides injected by script.js -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <hr class="hairline" style="margin-bottom: 40px;">
-        <div class="footer-top">
-            <div class="footer-tagline font-display italic">Interiors of Quiet Distinction</div>
-            <nav class="nav-links">
-                <a href="index.html" class="nav-link font-utility uppercase text-xs">Home</a>
-                <a href="portfolio.html" class="nav-link font-utility uppercase text-xs">Portfolio</a>
-                <a href="contact.html" class="nav-link font-utility uppercase text-xs">Contact</a>
-            </nav>
-        </div>
-        <div class="footer-bottom font-utility uppercase">
-            &copy; 2026 Casa Elan. All rights reserved.
-        </div>
-    </footer>
+    <c-footer></c-footer>
 </body>
 </html>
