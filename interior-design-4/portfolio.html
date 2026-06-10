@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Elan | Portfolio</title>
+    <meta name="description" content="A considered collection of our work.">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo">CASA ELAN</a>
+        <button class="menu-toggle" aria-label="Toggle Navigation">MENU</button>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="portfolio.html" class="nav-link active">Portfolio</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-bg"></div>
+            <div class="page-header-overlay"></div>
+            <div class="hero-content">
+                <div class="page-eyebrow font-utility uppercase hero-text-line">OUR WORK</div>
+                <h1 class="page-heading font-display italic text-h1 hero-text-line delay-1">A Considered Collection</h1>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <section class="filter-bar reveal">
+            <button class="filter-btn font-utility text-xs uppercase active" data-filter="all">All</button>
+            <button class="filter-btn font-utility text-xs uppercase" data-filter="residential">Residential</button>
+            <button class="filter-btn font-utility text-xs uppercase" data-filter="commercial">Commercial</button>
+            <button class="filter-btn font-utility text-xs uppercase" data-filter="art-direction">Art Direction</button>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section class="portfolio-grid container">
+            <!-- 8 items -->
+            <article class="portfolio-item reveal" data-category="residential">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://placehold.co/800x1000/4A443A/F0EBE1?text=Res+1" alt="Residential Project 1">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-name font-display italic">The Wentworth Residence</h3>
+                        <p class="font-utility text-xs uppercase">New York</p>
+                    </div>
+                </div>
+            </article>
+            <article class="portfolio-item reveal delay-1" data-category="commercial">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://placehold.co/800x1000/4A443A/F0EBE1?text=Com+1" alt="Commercial Project 1">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-name font-display italic">Maison Blanc</h3>
+                        <p class="font-utility text-xs uppercase">Paris</p>
+                    </div>
+                </div>
+            </article>
+            <article class="portfolio-item reveal delay-2" data-category="art-direction">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://placehold.co/800x1000/4A443A/F0EBE1?text=Art+1" alt="Art Direction 1">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-name font-display italic">Lumina Gallery</h3>
+                        <p class="font-utility text-xs uppercase">London</p>
+                    </div>
+                </div>
+            </article>
+            <article class="portfolio-item reveal" data-category="residential">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://placehold.co/800x1000/4A443A/F0EBE1?text=Res+2" alt="Residential Project 2">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-name font-display italic">Oakhaven Estate</h3>
+                        <p class="font-utility text-xs uppercase">Connecticut</p>
+                    </div>
+                </div>
+            </article>
+            <article class="portfolio-item reveal delay-1" data-category="commercial">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://placehold.co/800x1000/4A443A/F0EBE1?text=Com+2" alt="Commercial Project 2">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-name font-display italic">The Harper Hotel</h3>
+                        <p class="font-utility text-xs uppercase">Chicago</p>
+                    </div>
+                </div>
+            </article>
+            <article class="portfolio-item reveal delay-2" data-category="residential">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://placehold.co/800x1000/4A443A/F0EBE1?text=Res+3" alt="Residential Project 3">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-name font-display italic">Soho Loft</h3>
+                        <p class="font-utility text-xs uppercase">New York</p>
+                    </div>
+                </div>
+            </article>
+            <article class="portfolio-item reveal" data-category="art-direction">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://placehold.co/800x1000/4A443A/F0EBE1?text=Art+2" alt="Art Direction 2">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-name font-display italic">Silken Campaign</h3>
+                        <p class="font-utility text-xs uppercase">Milan</p>
+                    </div>
+                </div>
+            </article>
+            <article class="portfolio-item reveal delay-1" data-category="residential">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://placehold.co/800x1000/4A443A/F0EBE1?text=Res+4" alt="Residential Project 4">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-name font-display italic">Villa Azure</h3>
+                        <p class="font-utility text-xs uppercase">Miami</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Studio Note -->
+        <section class="studio-note reveal">
+            <h2 class="pull-quote font-display italic">"Every space holds a conversation between those who build it and those who live within it."</h2>
+            <p class="font-utility text-xs uppercase">&mdash; Elena Voss, Founder</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <hr class="hairline" style="margin-bottom: 40px;">
+        <div class="footer-top">
+            <div class="footer-tagline font-display italic">Interiors of Quiet Distinction</div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link font-utility uppercase text-xs">Home</a>
+                <a href="portfolio.html" class="nav-link font-utility uppercase text-xs">Portfolio</a>
+                <a href="contact.html" class="nav-link font-utility uppercase text-xs">Contact</a>
+            </nav>
+        </div>
+        <div class="footer-bottom font-utility uppercase">
+            &copy; 2026 Casa Elan. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

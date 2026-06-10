@@ -43,6 +43,24 @@ document.addEventListener("DOMContentLoaded", async () => {
   const savedTheme = localStorage.getItem("theme");
   const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+  // Mobile Menu Logic
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const navLinks = document.getElementById("nav-links");
+  const navLinkItems = document.querySelectorAll(".nav-link");
+
+  if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Close menu when a link is clicked
+    navLinkItems.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+  }
+
   if (savedTheme) {
     htmlElement.setAttribute("data-theme", savedTheme);
   } else if (systemDark) {

@@ -19,17 +19,13 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/variables.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=2" />
   </head>
   <body>
     <header class="header" id="header">
       <div class="container nav">
         <a href="#home" class="logo" id="brand-logo">Squares n Triangles</a>
-        <div class="nav-links">
-          <a href="#philosophy">Philosophy</a>
-          <a href="#featured-carousel">Portfolio</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#contact">Contact</a>
+        <div class="nav-actions">
           <button
             id="theme-toggle"
             class="theme-toggle"
@@ -56,6 +52,21 @@
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
           </button>
+          
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#philosophy" class="nav-link">Philosophy</a>
+          <a href="#featured-carousel" class="nav-link">Portfolio</a>
+          <a href="#reviews" class="nav-link">Reviews</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
       </div>
     </header>
