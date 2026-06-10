@@ -5,7 +5,7 @@ class Navbar extends HTMLElement {
                 <a href="/" class="logo"><span class="logo-icon"></span>CASA ELAN</a>
                 <button class="menu-toggle" aria-label="Toggle Navigation">MENU</button>
                 <nav class="nav-links">
-                    <a href="/" class="nav-link">Home</a>
+                    <a href="index" class="nav-link">Home</a>
                     <a href="portfolio" class="nav-link">Portfolio</a>
                     <a href="contact" class="nav-link">Contact</a>
                 </nav>
@@ -20,13 +20,14 @@ class Navbar extends HTMLElement {
         const header = this.querySelector('.site-header');
         const path = window.location.pathname;
         let currentPage = path.split('/').pop();
-        if (currentPage === '') currentPage = '/';
-
+        if (currentPage === '') {
+            currentPage = 'index';
+        }
         this.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active');
             let linkPage = link.getAttribute('href');
 
-            if (linkPage === currentPage || (path === '/' && linkPage === '/')) {
+            if (linkPage === currentPage) {
                 link.classList.add('active');
             }
         });
