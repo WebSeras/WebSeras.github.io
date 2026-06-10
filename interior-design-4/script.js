@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 slidesData.forEach(item => {
                     const slide = document.createElement('a');
                     slide.className = 'swiper-slide';
-                    slide.href = 'portfolio.html';
+                    slide.href = 'portfolio';
                     slide.style.display = 'block';
                     slide.innerHTML = `
                         <img src="${item.image}" alt="${item.title}" onerror="this.src='https://placehold.co/800x1000/4A443A/F0EBE1?text=Image'">

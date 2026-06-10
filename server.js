@@ -9,7 +9,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Serve ALL folders and files from the root directory
-app.use(express.static(__dirname));
+app.use(express.static(__dirname, {
+    extensions: ['html']
+}));
 
 // The API endpoint that receives new portfolio data
 app.post('/api/save-portfolio', (req, res) => {

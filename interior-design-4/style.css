@@ -504,7 +504,7 @@ img {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/assets/image_1.jpg');
+  background-image: url('assets/image_1.jpg');
   background-size: cover;
   background-position: center;
   z-index: -2;
@@ -654,7 +654,7 @@ img {
 .page-header-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/assets/image_4.jpg');
+  background-image: url('assets/image_4.jpg');
   background-size: cover;
   background-position: center;
   z-index: -2;
@@ -753,7 +753,7 @@ img {
 
 /* Page Specific Styles: Contact */
 .contact-header-bg {
-  background-image: url('/assets/image_5.jpg');
+  background-image: url('assets/image_5.jpg');
 }
 
 .contact-grid {

@@ -2,12 +2,12 @@ class Navbar extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <header class="site-header">
-                <a href="index.html" class="logo"><span class="logo-icon"></span>CASA ELAN</a>
+                <a href="/" class="logo"><span class="logo-icon"></span>CASA ELAN</a>
                 <button class="menu-toggle" aria-label="Toggle Navigation">MENU</button>
                 <nav class="nav-links">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="portfolio.html" class="nav-link">Portfolio</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="portfolio" class="nav-link">Portfolio</a>
+                    <a href="contact" class="nav-link">Contact</a>
                 </nav>
             </header>
         `;
@@ -18,7 +18,7 @@ class Navbar extends HTMLElement {
         const menuToggle = this.querySelector('.menu-toggle');
         const navLinks = this.querySelector('.nav-links');
         const header = this.querySelector('.site-header');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPage = window.location.pathname.split('/').pop() || 'index';
 
         this.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active');
@@ -57,10 +57,10 @@ class Footer extends HTMLElement {
         this.innerHTML = `
             <footer class="site-footer">
                 <div class="footer-nav">
-                    <a href="index.html">Home</a> • 
-                    <a href="index.html#services">Services</a> • 
-                    <a href="portfolio.html">Portfolio</a> • 
-                    <a href="contact.html">Contact</a>
+                    <a href="index">Home</a> • 
+                    <a href="index#services">Services</a> • 
+                    <a href="portfolio">Portfolio</a> • 
+                    <a href="contact">Contact</a>
                 </div>
                 <hr class="footer-divider">
                 <div class="footer-meta-row">
