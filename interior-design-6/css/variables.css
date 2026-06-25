@@ -1,0 +1,63 @@
+/* CSS Design System Tokens for Studio Shades */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Premium Palette (Champagne Obsidian Theme) */
+  --bg-primary: #0a0a0c;          /* Midnight Obsidian */
+  --bg-surface: #121216;          /* Dark Slate Card/Surface */
+  --bg-surface-elevated: #1a1a20; /* Hover card state */
+  --bg-overlay: rgba(10, 10, 12, 0.85); /* Lightbox background */
+  
+  --accent-gold: #c5a880;         /* Champagne Gold */
+  --accent-gold-hover: #dfceb8;   /* Light Champagne */
+  --accent-bronze: #8a745b;       /* Muted Bronze */
+  --accent-dark-gold: #4e4031;    /* Dark Warm Gold for borders/dividers */
+  
+  --text-primary: #f3f3f5;        /* Alabaster Ivory */
+  --text-secondary: #c8c8cf;      /* Soft Light Gray */
+  --text-muted: #8e8e9c;           /* Silver Muted Gray */
+  
+  /* Validation Colors */
+  --color-error: #e05e5e;         /* Muted Coral Red */
+  --bg-error-subtle: #241414;     /* Dark Red Tint */
+  --color-success: #60c090;       /* Muted Emerald Green */
+  --bg-success-subtle: #14241c;   /* Dark Green Tint */
+
+  /* Typography Fonts */
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Outfit', sans-serif;
+
+  /* Shadows and Visual Effects */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.9);
+  --shadow-glow: 0 0 20px rgba(197, 168, 128, 0.15);
+  --shadow-glow-error: 0 0 20px rgba(224, 94, 94, 0.15);
+  --shadow-glow-success: 0 0 20px rgba(96, 192, 144, 0.15);
+  
+  /* Borders */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-full: 9999px;
+  --border-subtle: 1px solid rgba(197, 168, 128, 0.12);
+  --border-medium: 1px solid rgba(197, 168, 128, 0.25);
+  --border-error: 1px solid rgba(224, 94, 94, 0.3);
+  --border-success: 1px solid rgba(96, 192, 144, 0.3);
+
+  /* Spacing Grid (Responsive scaling) */
+  --space-unit: 1rem;
+  --space-xxs: calc(var(--space-unit) * 0.25); /* 4px */
+  --space-xs: calc(var(--space-unit) * 0.5);   /* 8px */
+  --space-sm: calc(var(--space-unit) * 0.75);  /* 12px */
+  --space-md: var(--space-unit);               /* 16px */
+  --space-lg: calc(var(--space-unit) * 1.5);   /* 24px */
+  --space-xl: calc(var(--space-unit) * 2);     /* 32px */
+  --space-xxl: calc(var(--space-unit) * 3);    /* 48px */
+  --space-huge: calc(var(--space-unit) * 4.5); /* 72px */
+
+  /* Timing and Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}

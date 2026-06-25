@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Outfit', sans-serif;
+
+  --color-cream-light: #FAF9F5;
+  --color-cream: #F3EFE0;
+  --color-cream-dark: #E6E1CE;
+  
+  --color-taupe-light: #DDD7CD;
+  --color-taupe: #B3A595;
+  --color-taupe-dark: #8C7B6A;
+  
+  --color-charcoal-light: #333333;
+  --color-charcoal: #1C1C1C;
+  --color-charcoal-dark: #0F0F0F;
+
+  --color-gold-light: #DFCFB7;
+  --color-gold: #C0A985;
+  --color-gold-dark: #9F865E;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cream-light);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom styles for luxury glassmorphism, scrollbars, before/after slider */
+.glassmorphism {
+  background: rgba(250, 249, 245, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(179, 165, 149, 0.15);
+}
+
+.glassmorphism-dark {
+  background: rgba(28, 28, 28, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(250, 249, 245, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(179, 165, 149, 0.15);
+}
+
+/* Custom scrollbar for modern design */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-taupe);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-taupe-dark);
+}
