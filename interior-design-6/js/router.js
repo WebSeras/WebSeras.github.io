@@ -53,20 +53,6 @@ class AppRouter {
     document.querySelector(".mobile-drawer-overlay")?.classList.remove("open");
     document.body.classList.remove("hamburger-open");
 
-    // MANDATORY Accessibility Routing: Route focus to the main page container or heading
-    const pageHeading = document.querySelector(
-      ".view-container h1, .view-container h2",
-    );
-    const container = document.querySelector(".view-container");
-
-    if (pageHeading) {
-      pageHeading.setAttribute("tabindex", "-1");
-      pageHeading.focus();
-    } else if (container) {
-      container.setAttribute("tabindex", "-1");
-      container.focus();
-    }
-
     // Trigger re-initialization of page-specific actions in app.js
     if (window.AppBootstrapper) {
       window.AppBootstrapper.onPageRendered(hash);

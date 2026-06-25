@@ -177,7 +177,7 @@
 .hero-scroll-indicator {
     position: absolute;
     bottom: var(--space-xl);
-    left: 50%;
+    left: 80%;
     transform: translateX(-50%);
     z-index: 3;
     display: flex;
@@ -204,7 +204,8 @@
     animation: bounce-arrow 2s infinite;
 }
 @keyframes bounce-arrow {
-    0%, 100% {
+    0%,
+    100% {
         transform: translateY(0);
     }
     50% {
@@ -344,7 +345,11 @@
 
 /* Interactive Collage Hover Effects */
 .about-collage .about-collage-img {
-    transition: transform var(--transition-slow), border-color var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-normal);
+    transition:
+        transform var(--transition-slow),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        opacity var(--transition-normal);
 }
 .about-collage:hover .collage-primary:not(:hover) {
     transform: scale(0.98);

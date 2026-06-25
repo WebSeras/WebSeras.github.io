@@ -118,7 +118,7 @@ const AppBootstrapper = (() => {
   const initHome = () => {
     const track = document.getElementById("testimonial-track");
     const dots = document.querySelectorAll(".testimonial-dot");
-    
+
     // Autoplay & Slide indicators
     if (track && dots.length > 0) {
       let currentIndex = 0;
@@ -161,7 +161,9 @@ const AppBootstrapper = (() => {
     }
 
     // Scroll-driven animation fallback for horizontal scroller
-    if (!CSS.supports('(animation-timeline: view()) and (animation-range: entry)')) {
+    if (
+      !CSS.supports("(animation-timeline: view()) and (animation-range: entry)")
+    ) {
       const scroller = document.getElementById("horizontal-scroller");
       const entries = scroller ? scroller.querySelectorAll(".entry") : [];
 
@@ -175,7 +177,10 @@ const AppBootstrapper = (() => {
           const maxDistance = scrollerRect.width;
 
           // Calculate progress: 1 at center, 0.6 at edge
-          const ratio = Math.max(0.6, 1 - (distanceFromCenter / maxDistance) * 0.4);
+          const ratio = Math.max(
+            0.6,
+            1 - (distanceFromCenter / maxDistance) * 0.4,
+          );
 
           entry.style.scale = ratio;
           entry.style.opacity = ratio;
